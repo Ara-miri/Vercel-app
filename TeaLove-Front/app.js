@@ -139,17 +139,19 @@ async function updateUI() {
     ]);
 
     domElements.totalClicks.textContent = clicks.toString();
-    domElements.userList.textContent = users
-      .map(
-        (user) => `
-      <li class="user-item" data-address="${user.address.toLowerCase()}">
+    domElements.userList.innerHTML = "";
+    users.forEach((user) => {
+      const li = document.createElement("li");
+      li.className = "user-item";
+      li.dataset.address = user.address.toLowerCase();
+
+      li.innerHTML = `
         ${user.address.slice(0, 5)}...${user.address.slice(38, 42)} 
         <span class="click-count">${user.clicks} clicks</span>
-      </li>
-    `
-      )
-      .join("");
+      `;
 
+      domElements.userList.appendChild(li);
+    });
     // Update user position
     const currentAddress = await signer.getAddress();
     const position =
