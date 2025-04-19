@@ -54,6 +54,8 @@ sortedUsers.forEach((user) => {
   userList.appendChild(li);
 });
 
+updateUI();
+
 export async function initializeApplication() {
   // Checks chain changes and updates UI accordingly
   liveChainChangeCheck();
