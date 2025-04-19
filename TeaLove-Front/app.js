@@ -139,7 +139,7 @@ async function updateUI() {
     ]);
 
     domElements.totalClicks.textContent = clicks.toString();
-    domElements.userList.innerHTML = users
+    domElements.userList.textContent = users
       .map(
         (user) => `
       <li class="user-item" data-address="${user.address.toLowerCase()}">
