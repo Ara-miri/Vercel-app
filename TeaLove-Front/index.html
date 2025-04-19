@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>TeaLove Website</title>
+  </head>
+  <body>
+    <div class="section">
+      <button id="connectButton">Connect Wallet</button>
+      <div class="stats">
+        <p>Total Clicks:</p>
+        <span id="totalClicks">0</span>
+        <br />
+      </div>
+      <button id="clickButton">Click Me!</button>
+    </div>
+
+    <div class="user-position-section">
+      <div id="positionInfo">
+        Your Position: <span id="userPosition">-</span>
+        <button id="jumpToPosition" class="jump-button">
+          📍 Jump to My Position
+        </button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Top Users</h2>
+      <ul id="userList" class="user-list"></ul>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+/* Updated CSS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary: #6366f1;
+  --secondary: #a855f7;
+  --background: #0f172a;
+  --surface: #1e293b;
+  --text: #f8fafc;
+  --success: #22c55e;
+  --error: #ef4444;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(45deg, var(--background), #0b1120);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+  margin: 0;
+}
+
+#connectButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+  margin: 0;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: rgba(30, 41, 59, 0.959);
+  transform: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+#connectButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+}
+
+.section {
+  align-items: center;
+  text-align: center;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.section:first-child {
+  position: relative; /* Creates positioning context */
+  padding-top: 4rem; /* Makes space for button */
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#clickButton {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  padding: 1rem 1rem;
+  border-radius: 50%;
+  /* font-weight: 600; */
+  font-size: 1.3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(30, 41, 59, 0.959);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#clickButton:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+#clickButton:active {
+  transform: scale(0.98);
+}
+
+.stats {
+  font-size: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+#totalClicks {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stats p {
+  color: rgba(173, 184, 202, 0.959);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px; /* Adjust this value based on your needs */
+  overflow-y: auto;
+  padding-right: 8px; /* Space for scrollbar */
+}
+
+/* Custom scrollbar styling */
+.user-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.user-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.user-list::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.user-list::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+.user-item {
+  background: rgba(112, 93, 93, 0.178);
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  margin-right: 4px; /* Compensate for scrollbar space */
+}
+
+.user-item:hover {
+  background: rgba(221, 85, 85, 0.562);
+  transform: translateX(8px);
+}
+
+.user-item::before {
+  margin-right: 0.75rem;
+}
+/* Gold medal for 1st place */
+.user-item:nth-child(1)::before {
+  content: "🥇";
+}
+
+/* Silver medal for 2nd place */
+.user-item:nth-child(2)::before {
+  content: "🥈";
+}
+
+/* Bronze medal for 3rd place */
+.user-item:nth-child(3)::before {
+  content: "🥉";
+}
+
+/* Default emoji for positions 4-10 */
+.user-item:nth-child(n + 4)::before {
+  content: "👤";
+}
+
+.user-item:nth-child(n + 11)::before {
+  content: "";
+}
+
+.transaction-alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  padding: 12px 20px;
+  background: #ff4444;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.transaction-alert.visible {
+  opacity: 1;
+  bottom: 40px;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+
+  .section:first-child {
+    padding-top: 3.5rem;
+  }
+
+  #connectButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.user-position-section {
+  margin: 1rem 0;
+}
+
+#positionInfo {
+  display: flex !important; /* Override inline style */
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  opacity: 1; /* Ensure visibility */
+}
+
+.jump-button {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.jump-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.highlight-user {
+  background: rgba(99, 102, 241, 0.2) !important;
+  border: 1px solid var(--primary);
+  animation: highlight 2s ease;
+}
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
