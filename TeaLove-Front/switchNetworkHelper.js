@@ -1,6 +1,5 @@
 import {
   teaSepoliaChain,
-  sepoliaChain,
   contractAbi,
   mainContractAddress,
 } from "./constants.js";
