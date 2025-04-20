@@ -102,6 +102,41 @@ h2 {
   margin: 1.5rem 0;
 }
 
+.contract-address {
+  color: rgba(173, 184, 202, 0.959);
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-family: monospace;
+  margin-top: -2.8rem;
+  margin-left: -1.5rem;
+}
+
+.contract-address a {
+  color: var(--secondary); /* or any color you prefer */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contract-address a:hover {
+  color: var(--primary);
+}
+
+.contract-address a:visited {
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
 #totalClicks {
   font-size: 2.5rem;
   font-weight: 700;
@@ -157,7 +192,7 @@ h2 {
 
 .user-item:hover {
   background: rgba(221, 85, 85, 0.562);
-  transform: translateX(8px);
+  transform: translateX(3px);
 }
 
 .user-item::before {
