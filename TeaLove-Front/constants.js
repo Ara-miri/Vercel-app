@@ -104,30 +104,5 @@ export const teaSepoliaChain = {
   rpcUrls: ["https://tea-sepolia.g.alchemy.com/public"],
   blockExplorerUrls: ["https://sepolia.tea.xyz"],
 };
-export const optimismSepoliaChain = {
-  chainId: "0xaa37dc", // 11155420 in hex
-  chainName: "OP Sepolia Testnet",
-  nativeCurrency: {
-    name: "Optimism Sepolia ETH",
-    symbol: "ETH",
-    decimals: 18,
-  },
-  rpcUrls: ["https://sepolia.optimism.io"],
-  blockExplorerUrls: ["https://sepolia-optimistic.etherscan.io"],
-};
-export const sepoliaChain = {
-  chainId: "0xaa36a7", // 11155111 in hex
-  chainName: "Sepolia Test Network",
-  nativeCurrency: {
-    name: "Sepolia ETH",
-    symbol: "ETH",
-    decimals: 18,
-  },
-  rpcUrls: ["https://rpc.sepolia.org"],
-  blockExplorerUrls: ["https://sepolia.etherscan.io"],
-};
 
-// export const tokenAddress = "0x18B0dE9cdb72fA27Fd7e1c7dfA8656D15916aC7e";
-
-// export const mainContractAddress = "0xfeE91aC8395bbb335030961990e3B1F321094E0b"; // op sepolia
 export const mainContractAddress = "0x4DD4bF108C5eeafF6c4972752593bB28277E6c4D"; // tea sepolia
