@@ -1,66 +1,78 @@
-## Foundry
+## 📜 Table of Contents
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+- [Overview](#-Overview)
+- [Smart Contract](#smart-contract)
+- [Website](#website)
+- [Setup](#setup)
+- [Getting Started](#getting-started)
+- [Testing](#testing)
+- [License](#📄License)
 
-Foundry consists of:
+---
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## 🧭Overview
 
-## Documentation
+**Tea Love** is a decentralized application that allows users to participate in a fun click-based interaction, tracked and ranked on the blockchain. The system records:
 
-https://book.getfoundry.sh/
+- Total number of clicks
+- Individual user clicks
+- A ranked list of users by clicks
 
-## Usage
+This project includes:
 
-### Build
+- Solidity smart contract
+- Deployment script
+- Comprehensive tests
+- A frontend website for interaction
 
-```shell
-$ forge build
-```
+---
 
-### Test
+## 🛠️ Smart Contract
 
-```shell
-$ forge test
-```
+**Contract Name:** `TeaLoveContract`  
+[![Solidity Version](https://img.shields.io/badge/Solidity-0.8.26-blue)](https://docs.soliditylang.org/en/v0.8.26/)
 
-### Format
+## 🌐 Website
 
-```shell
-$ forge fmt
-```
+[Visit the live DApp](https://tea-love-project.vercel.app/)
 
-### Gas Snapshots
+Users can connect their wallets and interact directly with the smart contract via a sleek and simple frontend.
 
-```shell
-$ forge snapshot
-```
+---
 
-### Anvil
+## ⚙️ Setup
 
-```shell
-$ anvil
-```
+To work with the project locally:
 
-### Deploy
+##### Clone the repository
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+> git clone https://github.com/Ara-miri/Vercel-app.git && cd tea-love-project
 
-### Cast
+##### Install dependencies
 
-```shell
-$ cast <subcommand>
-```
+> forge install
 
-### Help
+## 🚀 Getting Started
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+To deploy the contract and interact locally:
+
+1. Compile the contract:
+   > forge build
+2. Run a local blockchain (optional):
+   > anvil
+3. Deploy the contract on local blockchain:
+   > forge script src/TeaLoveContract.s.sol --broadcast
+
+Or:
+
+> forge script src/TeaLoveContract.s.sol --rpc-url $YOUR_RPC_URL --private-key $YOUR_PRIVATE_KEY --broadcast
+
+## 🧪 Testing
+
+Run tests:
+
+> forge test
+
+## 📄 License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
