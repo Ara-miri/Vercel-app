@@ -14,7 +14,6 @@ broadcast
 node_modules/
 # Docs
 docs/
-test/
 
 # Dotenv file
 .env
