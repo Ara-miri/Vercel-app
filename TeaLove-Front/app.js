@@ -43,14 +43,20 @@ domElements.totalClicks.textContent = allClicks;
 domElements.userList.innerHTML = "";
 
 const sortedUsers = await getSortedUsers();
-sortedUsers.forEach((user) => {
+sortedUsers.forEach((user, index) => {
   const li = document.createElement("li");
   li.className = "user-item";
   li.dataset.address = user.address.toLowerCase();
-  li.textContent = `${user.address.slice(0, 5)}...${user.address.slice(
-    38,
-    42
-  )} ${user.clicks} clicks`;
+  let rankDisplay = "";
+  if (index === 0) rankDisplay = "🥇";
+  else if (index === 1) rankDisplay = "🥈";
+  else if (index === 2) rankDisplay = "🥉";
+  else rankDisplay = "👤";
+  li.textContent = `
+  <span class="user-rank">${rankDisplay} #${index + 1}</span>
+  ${user.address.slice(0, 5)}...${user.address.slice(38, 42)} 
+  <span class="click-count">${user.clicks} clicks</span>
+`;
   userList.appendChild(li);
 });
 
@@ -142,12 +148,21 @@ async function updateUI() {
 
     domElements.totalClicks.textContent = clicks.toString();
     domElements.userList.innerHTML = "";
-    users.forEach((user) => {
+    users.forEach((user, index) => {
       const li = document.createElement("li");
       li.className = "user-item";
       li.dataset.address = user.address.toLowerCase();
+      let rankDisplay = "";
+      if (index === 0) rankDisplay = "🥇";
+      else if (index === 1) rankDisplay = "🥈";
+      else if (index === 2) rankDisplay = "🥉";
+      else if (index >= 3 && index < 10) rankDisplay = "👤";
 
       li.innerHTML = `
+        <div class="user-rank">
+        <span class="rank-number">#${index + 1}</span>
+        <span class="rank-emoji">${rankDisplay || ""}</span>
+        </div>
         ${user.address.slice(0, 5)}...${user.address.slice(38, 42)} 
         <span class="click-count">${user.clicks} clicks</span>
       `;
