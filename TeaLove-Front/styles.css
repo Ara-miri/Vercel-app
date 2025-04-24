@@ -102,7 +102,8 @@ h2 {
   margin: 1.5rem 0;
 }
 
-.contract-address {
+.contract-address,
+.github-link {
   color: rgba(173, 184, 202, 0.959);
   font-size: 14px;
   padding: 0.5rem 1rem;
@@ -113,19 +114,34 @@ h2 {
   margin-left: -1.5rem;
 }
 
-.contract-address a {
+.contract-address a,
+.github-link a {
   color: var(--secondary); /* or any color you prefer */
   text-decoration: none;
   font-weight: bold;
 }
 
-.contract-address a:hover {
+.contract-address a:hover,
+.github-link a:hover {
   color: var(--primary);
 }
 
-.contract-address a:visited {
+.contract-address a:visited,
+.github-link a:visited {
   color: var(--secondary);
   font-style: italic;
+}
+
+.info-block {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-top: -1rem;
+  margin-left: -1.5rem;
+  gap: 2rem;
 }
 
 .top-bar {
@@ -198,29 +214,6 @@ h2 {
 .user-item::before {
   margin-right: 0.75rem;
 }
-/* Gold medal for 1st place */
-.user-item:nth-child(1)::before {
-  content: "🥇";
-}
-
-/* Silver medal for 2nd place */
-.user-item:nth-child(2)::before {
-  content: "🥈";
-}
-
-/* Bronze medal for 3rd place */
-.user-item:nth-child(3)::before {
-  content: "🥉";
-}
-
-/* Default emoji for positions 4-10 */
-.user-item:nth-child(n + 4)::before {
-  content: "👤";
-}
-
-.user-item:nth-child(n + 11)::before {
-  content: "";
-}
 
 .transaction-alert {
   position: fixed;
@@ -247,13 +240,16 @@ h2 {
   body {
     padding: 1rem;
   }
-
   .section {
     padding: 1.5rem;
   }
-
   .section:first-child {
     padding-top: 3.5rem;
+  }
+  .info-block {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
   }
 
   #connectButton {
@@ -306,4 +302,27 @@ h2 {
   100% {
     transform: scale(1);
   }
+}
+
+.user-rank {
+  margin-right: 0.75rem;
+  color: var(--text);
+  font-size: 1rem;
+  display: flex;
+  min-width: 80px;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.rank-number {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1;
+}
+
+.rank-emoji {
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(1px);
 }
